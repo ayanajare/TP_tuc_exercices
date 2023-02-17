@@ -41,7 +41,7 @@ jobs:
           cd application 
           uvicorn main:app &
           cd ../tests
-          locust --headless
+          locust --config=.locust.conf
 
 
       
