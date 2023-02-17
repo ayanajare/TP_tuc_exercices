@@ -29,5 +29,4 @@ jobs:
       - name : Run Tests 
         run : |
           cd application
-          py titles.py 
-            
+          python3 titles.py 
