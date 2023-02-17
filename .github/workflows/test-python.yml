@@ -27,7 +27,7 @@ jobs:
         run : |
           python -m pytest
 
-      - name : Pytint
+      - name : Pylint run
         run :  pylint application/ tests/ --exit-zero 
 
       - name : Coverage Install
@@ -35,6 +35,16 @@ jobs:
           pip install coverage 
           coverage run -m pytest
           coverage report -m 
+      
+      - name : Run app & Locust run 
+        run : |
+          cd application 
+          uvicorn main:app &
+          cd ../tests
+          locust --headless
+
+
+      
           
 
   
